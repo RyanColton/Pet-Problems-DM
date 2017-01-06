@@ -1,0 +1,19 @@
+/* This function finds the longest word in a string
+it still needs work, as it cannot account for if more 
+than one word is of the highest length */
+
+function longestWord(str)
+{
+  	// str.match is creating an array of individual words
+    // Example words = ["this","is","a","test"]
+    var words = str.match(/\w[a-z]{0,}/gi);
+    var longest = '';
+
+    for(var i = 1 ; i < words.length ; i++){
+      if (words[i].length > longest.length){
+        longest = words[i];
+      }
+        
+    }
+    return longest;
+}
