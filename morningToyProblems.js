@@ -94,3 +94,37 @@ function tripleTrouble(one, two, three){
 }
 console.log(tripleTrouble("Bm", "aa", "tn"));
 console.log(tripleTrouble("LLh","euo","xtr"));
+
+
+//Build a bank constructor Function
+//It needs an account number, and owner name, and a balance.
+//Give it methods to add and withdraw from the balance
+//Give it a method to log the remaining balance for the owner name
+//Make 2 accounts and manipulate their balances.
+function add(number){
+  this.balance += number;
+}
+
+function withdraw(number){
+  this.balance -= number;
+}
+
+
+function Account(accountNum, name, balance){
+  this.accountNumber = accountNum;
+  this.ownerName = name;
+  this.balance = balance;
+  this.add = add;
+  this.withdraw = withdraw;
+}
+
+var account1 = new Account(123, "Bill", 500);
+var account2 = new Account(456, "Ted", 600);
+
+account1.add(30);
+account1.withdraw(125);
+
+account2.add(700);
+account2.withdraw(243);
+console.log(account1);
+console.log(account2);
